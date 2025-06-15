@@ -1,11 +1,28 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import FoodMenuMainItem from "@components/FoodMenuMainItem.tsx";
+
+const menu = await getCollection("menu");
+const orderedMenu = menu.sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Menü">
+    <div class="overflow-y-auto h-full no-scrollbar">
+      {
+        orderedMenu.map((item, idx) => (
+          <FoodMenuMainItem
+            client:load
+            mainTitle={item.data.mainTitle}
+            mainTitleEN={item.data.mainTitleEN}
+            items={item.data.items}
+            containerStyles={`${orderedMenu.length - 1 === idx ? "" : "mb-8"}`}
+          />
+        ))
+      }
+      <!-- <p class="mt-8 text-center text-sm">
+        Hesaplarınıza yüzde 10 servis ücreti eklenmektedir.
+      </p> -->
+    </div>
 </Layout>
