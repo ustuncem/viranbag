@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
 import FoodMenuMainItem from "@components/FoodMenuMainItem.tsx";
-import Popup from "@components/Popup";
 
 const menu = await getCollection("menu");
 const orderedMenu = menu.sort((a, b) => a.data.order - b.data.order);

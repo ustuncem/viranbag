@@ -1,7 +1,9 @@
 ---
 import Logo from './Logo.astro';
+import Popup from './Popup';
 ---
 
-<header class="flex items-center justify-center">
+<header class="flex flex-col items-center justify-center">
   <Logo />
+  <Popup client:visible />
 </header>

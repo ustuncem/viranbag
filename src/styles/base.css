@@ -27,6 +27,8 @@
   --color-secondary-900: oklch(15.083% 0.09183 264.16);
   --color-secondary-950: oklch(13.635% 0.08419 264.18);
 
+  --color-primary-light: #bbbcd8;
+
   --font-primary: "Dosis", sans-serif;
   --font-secondary: "Dosis", sans-serif;
 }
