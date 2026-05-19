@@ -35,7 +35,7 @@ export default function FoodMenuMainItem({
         class="flex justify-between gap-x-4 hover:cursor-pointer"
         onClick={handleClick}
       >
-        <h1 class="font-secondary text-primary text-xl font-semibold">
+        <h1 class="font-secondary text-primary text-xl font-semibold uppercase">
           {mainTitle}
           {mainTitleEN && (
             <span class="font-secondary text-primary text-xl font-light">

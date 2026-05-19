@@ -10,8 +10,7 @@ const orderedMenu = menu.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Menü">
-
-  <div class="no-scrollbar h-full overflow-y-auto">
+  <div class="no-scrollbar h-full w-full overflow-y-auto">
     {
       orderedMenu.map((item, idx) => (
         <FoodMenuMainItem

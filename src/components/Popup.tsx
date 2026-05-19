@@ -40,7 +40,7 @@ export default function Popup() {
                     <span className="font-semibold">HAFTA İÇİ</span>
                   </div>
                   <div className="text-lg">
-                    <span className="font-semibold text-nowrap">3.000 TL</span>
+                    <span className="font-semibold text-nowrap">4.500 TL</span>
                   </div>
                 </li>
                 <li className="border-primary-light mb-2 flex justify-between gap-6 border-b pb-2">
@@ -49,7 +49,7 @@ export default function Popup() {
                     <span className="font-semibold">HAFTA SONU</span>
                   </div>
                   <div className="text-lg">
-                    <span className="font-semibold text-nowrap">3.500 TL</span>
+                    <span className="font-semibold text-nowrap">5.000 TL</span>
                   </div>
                 </li>
               </ul>
