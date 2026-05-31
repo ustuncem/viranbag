@@ -17,6 +17,8 @@ const orderedMenu = menu.sort((a, b) => a.data.order - b.data.order);
           mainTitle={item.data.mainTitle}
           mainTitleEN={item.data.mainTitleEN}
           items={item.data.items}
+          menuLayout={item.data.menuLayout}
+          priceColumns={item.data.priceColumns}
           containerStyles={`${orderedMenu.length - 1 === idx ? "" : "mb-8"}`}
         />
       ))

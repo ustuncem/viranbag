@@ -1,7 +1,8 @@
 export interface Product {
 	title: string;
 	titleEN: string;
-	price: string;
+	price?: string;
+	prices?: Record<string, string>;
 	description: string;
 	descriptionEN: string;
 	containerStyle?: string;

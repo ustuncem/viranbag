@@ -4,11 +4,14 @@ import arrow from "@assets/icons/arrow.svg?url";
 
 import type { Product } from "./FoodMenuItem";
 import FoodMenuItem from "./FoodMenuItem";
+import FoodMenuPriceGrid from "./FoodMenuPriceGrid";
 
 export interface Props {
   mainTitle: string;
   mainTitleEN: string;
   items: Product[];
+  menuLayout?: "list" | "price-grid";
+  priceColumns?: string[];
   containerStyles?: string;
 }
 
@@ -16,6 +19,8 @@ export default function FoodMenuMainItem({
   mainTitle,
   mainTitleEN,
   items,
+  menuLayout = "list",
+  priceColumns,
   containerStyles,
 }: Props) {
   const panelRef = useRef<HTMLDivElement>(null);
@@ -62,12 +67,17 @@ export default function FoodMenuMainItem({
         <div
           className={`h-0 transition-opacity ${isOpen ? "opacity-100" : "opacity-0"}`}
         >
-          {items.map((item, idx) => (
-            <FoodMenuItem
-              {...item}
-              containerStyle={idx !== items.length - 1 ? "mb-8" : ""}
-            />
-          ))}
+          {menuLayout === "price-grid" && priceColumns ? (
+            <FoodMenuPriceGrid columns={priceColumns} items={items} />
+          ) : (
+            items.map((item, idx) => (
+              <FoodMenuItem
+                {...item}
+                price={item.price ?? ""}
+                containerStyle={idx !== items.length - 1 ? "mb-8" : ""}
+              />
+            ))
+          )}
         </div>
       </div>
     </article>
